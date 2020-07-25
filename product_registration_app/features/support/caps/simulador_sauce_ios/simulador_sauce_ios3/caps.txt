@@ -1,0 +1,21 @@
+[caps]
+platformName            = 'iOS'
+deviceName              = 'iPhone 7 Simulator'
+username                = ''
+accessKey               = ''
+name                    = 'iOS Test iPhone 7 Simulator'
+app                     = 'sauce-storage:calculadora.zip'
+platformVersion         = '12.4'
+automationName          = 'XCUITest'
+newCommandTimeout       = 1000
+systemPort              = 8570
+wdaEventloopIdleDelay   = 5
+autoAcceptAlerts        = true
+autoGrantPermissions    = true
+waitForQuiescence       = false
+deviceOrientation       = 'portrait'
+
+[appium_lib]
+server_url              = ''
+wait                    = 10
+debug                   = false

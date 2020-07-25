@@ -1,0 +1,13 @@
+[caps]
+platformName            = 'Android'
+deviceName              = 'SM_A207M'
+udid                    = 'R9QN3065F0M'
+app                     = ''
+autoGrantPermissions    = true
+newCommandTimeout       = 10000
+systemPort              = 8200
+
+[appium_lib]
+server_url              = "http://127.0.0.1:4723/wd/hub"
+wait                    = 20
+debug                   = false

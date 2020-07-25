@@ -1,0 +1,14 @@
+dados_pessoais:
+  senha: 'teste@123'
+  cidade: 'Dallas'
+  estado: 'Texas'
+  cep: '78701'
+  endereco: '1500 Marilla St, Room 5 DS'
+  pais: 'United States'
+  data_nascimento: '29/July/1999'
+  numero_celular: '214-670-3738'
+
+dados_login:
+  email: ''
+  senha: 'teste@123'
+

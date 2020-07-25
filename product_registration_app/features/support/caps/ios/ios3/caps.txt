@@ -1,0 +1,18 @@
+[caps]
+platformName            = "iOS"
+deviceName              = "iPhone 11"
+platformVersion         = "13.3"
+automationName          = "XCUITest"
+app                     = ""
+udid                    = ""
+autoAcceptAlerts        = true
+autoGrantPermissions    = true
+useNewWDA               = false
+systemPort              = 8562
+wdaLocalPort            = 9900
+newCommandTimeout       = 1000
+
+[appium_lib]
+server_url              = "http://127.0.0.1:4723/wd/hub"
+wait                    = 10
+debug                   = false

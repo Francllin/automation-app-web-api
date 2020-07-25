@@ -1,0 +1,18 @@
+[caps]
+platformName            = 'Android'
+deviceName              = 'Samsung Galaxy S8 Plus GoogleAPI Emulator'
+username                = ''
+accessKey               = ''
+app                     = 'sauce-storage:app-stage-release.apk'
+platformVersion         = '8.1'
+appiumVersion           = '1.16.0'
+name                    = 'Test Samsung Galaxy S8 Plus GoogleAPI Emulator'
+autoGrantPermissions    = true
+waitForQuiescence       = false
+deviceOrientation       = 'portrait'
+systemPort              = 8560
+newCommandTimeout       = 10000
+
+[appium_lib]
+server_url              = ''
+wait                    = 20

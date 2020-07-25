@@ -1,0 +1,21 @@
+[caps]
+platformName            = 'iOS'
+deviceName              = 'iPhone XR Simulator'
+username                = ''
+accessKey               = ''
+name                    = 'iOS Test iPhone XR Simulator'
+app                     = 'sauce-storage:calculadora.zip'
+platformVersion         = '13.2'
+automationName          = 'XCUITest'
+newCommandTimeout       = 1000
+systemPort              = 8570
+wdaEventloopIdleDelay   = 5
+autoAcceptAlerts        = true
+autoGrantPermissions    = true
+waitForQuiescence       = false
+deviceOrientation       = 'portrait'
+
+[appium_lib]
+server_url              = ''
+wait                    = 10
+debug                   = false
