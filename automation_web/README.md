@@ -51,7 +51,7 @@ $ https://chromedriver.chromium.org/downloads
 Temos que clonar o repositório em sua máquina para que possamos visualizar os testes, para isso:
 
 ```
-$ git clone https://github.com/cecchettisilva/processo_seletivo_livelo.git 
+$ git clone https://github.com/Francllin/automation-app-web-api.git
 ```
 
 
@@ -67,15 +67,9 @@ Para instalar as gemas utilizadas:
 $ bundle install --jobs 8
 ```
 
- 3. Executando o cenário:
-
-    - Acessar o site da Livelo;
-    - Buscar um produto;
-    - Adicionar o produto no carrinho.
-
 Depois de todos os pacotes serem instalados corretamente, podemos executar a interface de testes, via linha de comando, no PATH da raiz do projeto:
 ```
-$ cucumber -t @adicionar_produto
+$ cucumber -p uat -p headless_true
 ```
 
 
