@@ -1,0 +1,29 @@
+pipeline {
+   agent {
+     docker {
+       image 'qaninja/rubywd'
+     }
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            echo 'Remove lock e install bundler'
+            sh 'cd automation_web'
+            sh 'rm -f Gemfile.lock'
+            sh 'bundle install'
+         }
+        }
+        stage('UAT') {
+         steps {
+            echo 'rodar os testes'
+            sh 'bundle exec cucumber -p uat -p headless_true'
+         }
+        }
+        stage('prod') {
+            steps {
+                echo 'Webapp is Ready :D'
+         }
+        }
+   }
+}
