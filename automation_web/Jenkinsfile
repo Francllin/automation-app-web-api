@@ -13,12 +13,19 @@ pipeline {
             sh 'bundle install'
          }
         }
-        stage('UAT') {
+        stage('Test') {
          steps {
-            echo 'rodar os testes'
+            echo 'rodar os teste'
             sh 'bundle exec cucumber -p uat -p headless_true'
          }
         }
+        stage('UAT') {
+         steps {
+            echo 'Waiting For User Acceptance'
+            input(message: 'Go to Production?', ok: 'Yes')
+         }
+        }
+
         stage('prod') {
             steps {
                 echo 'Webapp is Ready :D'
