@@ -9,6 +9,7 @@ pipeline {
       stage('Build') {
          steps {
             echo 'Remove lock e install bundler'
+            sh 'cd automation_web'
             sh 'rm -f Gemfile.lock'
             sh 'bundle install'
          }
