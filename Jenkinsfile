@@ -17,6 +17,7 @@ pipeline {
          steps {
             echo 'rodar os teste'
             sh 'bundle exec cucumber -p uat -p headless_true'
+            cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', jsonReportDirectory: 'reports', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
          }
         }
         stage('UAT') {
