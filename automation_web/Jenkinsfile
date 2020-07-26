@@ -2,6 +2,7 @@ pipeline {
    agent {
      docker {
        image 'qaninja/rubywd'
+       sh 'cd automation_web'
      }
    }
 
