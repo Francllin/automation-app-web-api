@@ -51,7 +51,7 @@ $ https://chromedriver.chromium.org/downloads
 Temos que clonar o repositório em sua máquina para que possamos visualizar os testes, para isso:
 
 ```
-$ git clone https://github.com/Francllin/automation-app-web-api.git
+$ git clone https://github.com/Francllin/automation-web.git
 ```
 
 
