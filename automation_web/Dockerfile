@@ -106,10 +106,6 @@ RUN printf '#!/bin/sh\nXvfb :99 -screen 0 1280x1024x24 &\nexec "$@"\n' > /tmp/en
   && chmod +x /tmp/entrypoint \
         && sudo mv /tmp/entrypoint /docker-entrypoint.sh
 
-RUN cd /var/jenkins_home/workspace/automation-test-web/automation_web \
-    && rm -f Gemfile.lock \
-    && bundle install
-
 # ensure that the build agent doesn't override the entrypoint
 LABEL io.qaninja.preserve-entrypoint=true
 

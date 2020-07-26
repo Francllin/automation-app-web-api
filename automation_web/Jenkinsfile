@@ -9,11 +9,14 @@ pipeline {
       stage('Build') {
          steps {
             echo 'Remove lock e install bundler'
+            sh 'rm -f Gemfile.lock'
+            sh 'bundle install'
          }
         }
         stage('Test') {
          steps {
             echo 'rodar os teste'
+            sh 'bundle exec cucumber -p uat -p headless_true'
          }
         }
         stage('UAT') {
