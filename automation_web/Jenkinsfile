@@ -9,7 +9,6 @@ pipeline {
       stage('Build') {
          steps {
             echo 'Remove lock e install bundler'
-            echo $PWD
             sh 'rm -f Gemfile.lock'
             sh 'bundle install'
          }
