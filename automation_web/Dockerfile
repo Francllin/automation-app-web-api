@@ -1,11 +1,11 @@
 FROM ruby:2.6.5-stretch
 
-RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90automation \
-  && echo 'DPkg::Options "--force-confnew";' >> /etc/apt/apt.conf.d/90automation
+RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90qaninja \
+  && echo 'DPkg::Options "--force-confnew";' >> /etc/apt/apt.conf.d/90qaninja
 
 # Make sure PATH includes ~/.local/bin
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155
-# This only works for root. The automation user is done near the end of this Dockerfile
+# This only works for root. The qaninja user is done near the end of this Dockerfile
 RUN echo 'PATH="$HOME/.local/bin:$PATH"' >> /etc/profile.d/user-local-path.sh
 
 # Debian Jessie is EOL'd and original repos don't work.
@@ -19,7 +19,7 @@ RUN if grep -q Debian /etc/os-release && grep -q jessie /etc/os-release; then \
 
 # Make sure PATH includes ~/.local/bin
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155
-# This only works for root. The automation user is done near the end of this Dockerfile
+# This only works for root. The qaninja user is done near the end of this Dockerfile
 RUN echo 'PATH="$HOME/.local/bin:$PATH"' >> /etc/profile.d/user-local-path.sh
 
 # man directory is missing in some base images
@@ -31,13 +31,13 @@ RUN apt-get update \
     locales sudo openssh-client ca-certificates tar gzip parallel \
     net-tools netcat unzip zip bzip2 gnupg curl wget make jq
 
-RUN groupadd --gid 3434 automation \
-  && useradd --uid 3434 --gid automation --shell /bin/bash --create-home automation \
-  && echo 'automation ALL=NOPASSWD: ALL' >> /etc/sudoers.d/50-automation \
+RUN groupadd --gid 3434 qaninja \
+  && useradd --uid 3434 --gid qaninja --shell /bin/bash --create-home qaninja \
+  && echo 'qaninja ALL=NOPASSWD: ALL' >> /etc/sudoers.d/50-qaninja \
   && echo 'Defaults    env_keep += "DEBIAN_FRONTEND"' >> /etc/sudoers.d/env_keep
 
-USER automation
-ENV PATH /home/automation/.local/bin:/home/automation/bin:${PATH}
+USER qaninja
+ENV PATH /home/qaninja/.local/bin:/home/qaninja/bin:${PATH}
 
 #
 # Install Java 11 LTS / OpenJDK 11
@@ -107,7 +107,7 @@ RUN printf '#!/bin/sh\nXvfb :99 -screen 0 1280x1024x24 &\nexec "$@"\n' > /tmp/en
         && sudo mv /tmp/entrypoint /docker-entrypoint.sh
 
 # ensure that the build agent doesn't override the entrypoint
-LABEL io.automation.preserve-entrypoint=true
+LABEL io.qaninja.preserve-entrypoint=true
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/bin/sh"]
