@@ -9,11 +9,6 @@ task :rubocop do
   run_rubocop
 end
 
-desc 'gerar apk para projeto app calculadora'
-task :generate_apk do
-  generate_apk_android
-end
-
 desc 'Gherkin Linter'
 task :gherkin_linter do
   run_gherkin_linter
